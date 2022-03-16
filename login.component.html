@@ -1,0 +1,80 @@
+
+
+<form [formGroup]="loginform" >
+  <div class="l" >
+  <div class="aw" id="e">
+<div class="ab" style="background-color:white">
+  <div class="j">
+      <h2 class="a">Create your Account </h2>
+     <a href=" " class="s">SIGN IN </a></div><br>
+      <h5>GARBAGE/JUNK VALUES IN PROFILE MAY LEAD TO DEACTIVATION </h5>
+      <p>Please use a valid E-Mail ID and mobile number in registration.</p>
+
+  <input id="first-name" type="text" formControlName="username" placeholder="user name" style="width: 500px;height: 25px;">
+  <span class="text-danger"
+          *ngIf="(registerFormControl['username'].touched || submitted )&& registerFormControl['username'].errors?.['required']">
+           * UserName is required
+           </span>
+           <span class="text-danger"
+           *ngIf="registerFormControl['username'].touched && registerFormControl['username'].errors?.['invaliduser']">
+            * User ID is invalid.Between 3 to 35 character.Only letter and number are allowed.
+            </span>
+           <br> <br>
+  <input id="last-name" type="password" formControlName="pass" placeholder="password" style="width:500px;height: 25px;">
+  <span class="text-danger"
+  *ngIf="(registerFormControl['pass'].touched || submitted) && registerFormControl['pass'].errors?.['required']">
+      * User Name and User Password should not be the same
+   </span>
+   <span class="text-danger"
+   *ngIf="registerFormControl['pass'].touched && registerFormControl['pass'].errors?.['invalidPassword']">
+   * Password is invalid.Min 8 character & Max 15 character. Password must contain at least one small & one capital alphabet and numeric digit.
+
+</span><br><br>
+   <input id="last-name" type="password" formControlName="cpass" placeholder="confirm password" style="width: 500px;height: 25px;">
+   <span class="text-danger"
+   *ngIf="(registerFormControl['cpass'].touched || submitted) && registerFormControl['cpass'].errors?.['required']">
+       * Confirm password is required
+    </span>
+    <span class="text-danger"
+   *ngIf="registerFormControl['cpass'].touched && registerFormControl['cpass'].dirty && registerFormControl['cpass'].errors?.['invalidPassword']">
+   * confirmPassword is invalid.Min 8 character & Max 15 character. Password must contain at least one small & one capital alphabet and numeric digit.
+
+</span><br><br>
+    <select name="lang" id="languages" style="width:507px;height: 30px;"  formControlName="sel">
+      <option value="" disabled selected hidden>Preffered language</option>
+      <option value="English">English</option>
+      <option value="Hindi">Hindi</option>
+    </select>
+    <span class="text-danger"
+  *ngIf="(registerFormControl['sel'].touched || submitted) && registerFormControl['sel'].errors?.['required']">
+      * Preferred Language is Required
+   </span><br><br>
+    <select name="questions" id="ques" style="width:507px;height: 30px;" formControlName="selct">
+      <option value="" disabled selected hidden>Security Questions</option>
+      <option value="q1">What is pet name? </option>
+      <option value="q2">What is your maiden name? </option>
+      <option value="q3">What is your Favourite past time? </option>
+    </select>
+    <span class="text-danger"
+  *ngIf="(registerFormControl['selct'].touched || submitted) && registerFormControl['selct'].errors?.['required']">
+      * Security Question is Required.
+   </span>
+<br><br>
+<input id="secname" type="text" formControlName="secans" placeholder="security answer" style="width:500px;height: 25px;" >
+<span class="text-danger"
+*ngIf="(registerFormControl['secans'].touched || submitted) && registerFormControl['secans'].errors?.['required']">
+    * Security Answer is Required.
+ </span>
+ <span class="text-danger"
+           *ngIf="registerFormControl['secans'].touched  && registerFormControl['secans'].errors?.['invalidsecname']">
+            * Security Answer is invalid.Between 3 to 20 character.Only letter and number are allowed.
+            </span><br><br><br>
+<button style="height: 30px;width:75px"> Cancel </button>
+<button class="bu" style="height: 30px;width:75px" (click)="onSec()"> Continues </button>
+</div>
+<div class="ab" style="background-color:whitesmoke"> </div>
+</div></div>
+<div  style="background-color:aliceblue"></div>
+</form>
+
+
